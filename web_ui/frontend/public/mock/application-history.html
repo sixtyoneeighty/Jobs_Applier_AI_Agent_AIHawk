@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application History | AIHawk Jobs Applier</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <a href="dashboard.html" class="logo">AIHawk Jobs Applier</a>
+      <nav>
+        <a href="dashboard.html" class="nav-button">Dashboard</a>
+        <a href="resume.html" class="nav-button">Create Resume</a>
+        <a href="tailored-resume.html" class="nav-button">Tailored Resume</a>
+        <a href="cover-letter.html" class="nav-button">Cover Letter</a>
+        <a href="application-history.html" class="nav-button active">Applications</a>
+        <a href="profile.html" class="nav-button">Profile</a>
+      </nav>
+    </header>
+    
+    <main>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h1 class="page-title">Application History</h1>
+        <div>
+          <button class="form-button">+ Add Application</button>
+        </div>
+      </div>
+      
+      <div style="display: flex; margin-bottom: 2rem;">
+        <div style="flex: 1; margin-right: 1rem;">
+          <div class="form-group">
+            <input type="text" class="form-input" placeholder="Search applications...">
+          </div>
+        </div>
+        <div style="width: 200px; margin-right: 1rem;">
+          <select class="form-input">
+            <option value="">All Statuses</option>
+            <option value="planning">Planning</option>
+            <option value="applied">Applied</option>
+            <option value="interview">Interview</option>
+            <option value="offer">Offer</option>
+            <option value="rejected">Rejected</option>
+            <option value="declined">Declined</option>
+          </select>
+        </div>
+        <div style="width: 200px;">
+          <select class="form-input">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="company">Company A-Z</option>
+            <option value="status">By Status</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="application-list">
+        <div class="application-item">
+          <div class="application-header">
+            <div>
+              <h3 class="application-title">Senior Software Engineer</h3>
+              <div class="application-company">Google</div>
+              <div class="application-date">Applied on March 10, 2025</div>
+            </div>
+            <div class="application-status status-interview">Interview</div>
+          </div>
+          
+          <div class="application-details">
+            <div class="application-detail">
+              <div class="detail-label">Location</div>
+              <div class="detail-value">Mountain View, CA</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Type</div>
+              <div class="detail-value">Full-time</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Interview Date</div>
+              <div class="detail-value">March 17, 2025</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Documents</div>
+              <div class="detail-value">Tailored Resume, Cover Letter</div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 1rem; color: #666;">
+            <div style="font-weight: 500; margin-bottom: 0.5rem;">Notes:</div>
+            <div>Technical interview scheduled for 2:00 PM PT. Need to review algorithms and system design.</div>
+          </div>
+          
+          <div class="application-actions">
+            <button class="form-button">Update Status</button>
+            <button class="form-button secondary">View Documents</button>
+            <button class="form-button secondary">Edit</button>
+          </div>
+        </div>
+        
+        <div class="application-item">
+          <div class="application-header">
+            <div>
+              <h3 class="application-title">Frontend Developer</h3>
+              <div class="application-company">Meta</div>
+              <div class="application-date">Applied on March 5, 2025</div>
+            </div>
+            <div class="application-status status-applied">Applied</div>
+          </div>
+          
+          <div class="application-details">
+            <div class="application-detail">
+              <div class="detail-label">Location</div>
+              <div class="detail-value">Remote</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Type</div>
+              <div class="detail-value">Full-time</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Application Method</div>
+              <div class="detail-value">Company Website</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Documents</div>
+              <div class="detail-value">Resume, Cover Letter</div>
+            </div>
+          </div>
+          
+          <div class="application-actions">
+            <button class="form-button">Update Status</button>
+            <button class="form-button secondary">View Documents</button>
+            <button class="form-button secondary">Edit</button>
+          </div>
+        </div>
+        
+        <div class="application-item">
+          <div class="application-header">
+            <div>
+              <h3 class="application-title">Full Stack Developer</h3>
+              <div class="application-company">Airbnb</div>
+              <div class="application-date">Applied on February 25, 2025</div>
+            </div>
+            <div class="application-status status-rejected">Rejected</div>
+          </div>
+          
+          <div class="application-details">
+            <div class="application-detail">
+              <div class="detail-label">Location</div>
+              <div class="detail-value">San Francisco, CA</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Type</div>
+              <div class="detail-value">Full-time</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Response Date</div>
+              <div class="detail-value">March 8, 2025</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Documents</div>
+              <div class="detail-value">Tailored Resume</div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 1rem; color: #666;">
+            <div style="font-weight: 500; margin-bottom: 0.5rem;">Notes:</div>
+            <div>Received rejection email. Mentioned high volume of qualified applicants.</div>
+          </div>
+          
+          <div class="application-actions">
+            <button class="form-button secondary">View Documents</button>
+            <button class="form-button secondary">Edit</button>
+            <button class="form-button secondary">Delete</button>
+          </div>
+        </div>
+        
+        <div class="application-item">
+          <div class="application-header">
+            <div>
+              <h3 class="application-title">Software Engineer II</h3>
+              <div class="application-company">Amazon</div>
+              <div class="application-date">Applied on February 18, 2025</div>
+            </div>
+            <div class="application-status status-offer">Offer</div>
+          </div>
+          
+          <div class="application-details">
+            <div class="application-detail">
+              <div class="detail-label">Location</div>
+              <div class="detail-value">Seattle, WA</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Type</div>
+              <div class="detail-value">Full-time</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Offer Date</div>
+              <div class="detail-value">March 12, 2025</div>
+            </div>
+            <div class="application-detail">
+              <div class="detail-label">Documents</div>
+              <div class="detail-value">Tailored Resume, Cover Letter</div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 1rem; color: #666;">
+            <div style="font-weight: 500; margin-bottom: 0.5rem;">Notes:</div>
+            <div>Received offer: $140k base + 15% bonus + $50k RSUs/year. Need to respond by March 19.</div>
+          </div>
+          
+          <div class="application-actions">
+            <button class="form-button">Update Status</button>
+            <button class="form-button secondary">View Documents</button>
+            <button class="form-button secondary">Edit</button>
+          </div>
+        </div>
+      </div>
+      
+      <div style="display: flex; justify-content: center; margin-top: 2rem;">
+        <div style="display: flex; align-items: center;">
+          <button class="icon-button">←</button>
+          <span style="margin: 0 1rem;">Page 1 of 2</span>
+          <button class="icon-button">→</button>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 AIHawk Jobs Applier - All rights reserved</p>
+    </footer>
+  </div>
+</body>
+</html>

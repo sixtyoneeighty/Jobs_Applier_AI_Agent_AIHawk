@@ -442,10 +442,44 @@ Using this folder as a guide can be particularly helpful for:
 
 ## Usage
 
+### Command Line Interface
+
 1. **Data Folder:**
    Ensure that your data_folder contains the following files:
    - `secrets.yaml`
    - `plain_text_resume.yaml`
+
+### Web User Interface (New!)
+
+We now offer a user-friendly web interface that provides the same functionality as the CLI with an intuitive, step-by-step process:
+
+1. **Setup the Web UI:**
+   ```bash
+   # Start the backend server
+   cd web_ui/backend
+   pip install -r requirements.txt
+   uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+   # In a separate terminal, start the frontend
+   cd web_ui/frontend
+   npm install
+   npm start
+   ```
+
+2. **Access the Web Interface:**
+   Open your browser and navigate to http://localhost:3000
+
+3. **Guided Setup Process:**
+   - Complete your resume information
+   - Set your work preferences
+   - Configure your API key
+
+4. **Generate Documents:**
+   - Create standard resumes
+   - Generate tailored resumes for specific job descriptions
+   - Produce customized cover letters
+
+The web interface is perfect for users who prefer a visual approach to creating job application documents. For more details, see the [Web UI README](web_ui/README.md).
 
 
 

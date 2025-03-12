@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Tailored Resume | AIHawk Jobs Applier</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <a href="dashboard.html" class="logo">AIHawk Jobs Applier</a>
+      <nav>
+        <a href="dashboard.html" class="nav-button">Dashboard</a>
+        <a href="resume.html" class="nav-button">Create Resume</a>
+        <a href="tailored-resume.html" class="nav-button active">Tailored Resume</a>
+        <a href="cover-letter.html" class="nav-button">Cover Letter</a>
+        <a href="application-history.html" class="nav-button">Applications</a>
+        <a href="profile.html" class="nav-button">Profile</a>
+      </nav>
+    </header>
+    
+    <main>
+      <h1 class="page-title">Generate Tailored Resume</h1>
+      
+      <div class="form-container">
+        <form id="tailoredResumeForm">
+          <div class="form-section">
+            <h2 class="form-section-title">Job Details</h2>
+            <div class="form-group">
+              <label for="jobTitle" class="form-label">Job Title</label>
+              <input type="text" id="jobTitle" name="jobTitle" class="form-input" placeholder="Software Engineer" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="company" class="form-label">Company</label>
+              <input type="text" id="company" name="company" class="form-input" placeholder="Google" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="jobDescription" class="form-label">Job Description</label>
+              <textarea id="jobDescription" name="jobDescription" class="form-textarea" rows="10" placeholder="Paste the job description here" required></textarea>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Highlight Skills</h2>
+            <p style="margin-bottom: 1rem; color: #666;">Select which skills you want to emphasize for this job</p>
+            
+            <div class="form-group" id="skillsCheckboxes">
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="skill1" name="selectedSkills[]" value="JavaScript" checked>
+                  <label for="skill1" style="margin-left: 0.5rem;">JavaScript</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="skill2" name="selectedSkills[]" value="React" checked>
+                  <label for="skill2" style="margin-left: 0.5rem;">React</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="skill3" name="selectedSkills[]" value="Node.js" checked>
+                  <label for="skill3" style="margin-left: 0.5rem;">Node.js</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="skill4" name="selectedSkills[]" value="TypeScript" checked>
+                  <label for="skill4" style="margin-left: 0.5rem;">TypeScript</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="skill5" name="selectedSkills[]" value="REST APIs" checked>
+                  <label for="skill5" style="margin-left: 0.5rem;">REST APIs</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="skill6" name="selectedSkills[]" value="GraphQL">
+                  <label for="skill6" style="margin-left: 0.5rem;">GraphQL</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="skill7" name="selectedSkills[]" value="SQL">
+                  <label for="skill7" style="margin-left: 0.5rem;">SQL</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="skill8" name="selectedSkills[]" value="AWS">
+                  <label for="skill8" style="margin-left: 0.5rem;">AWS</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="skill9" name="selectedSkills[]" value="Docker">
+                  <label for="skill9" style="margin-left: 0.5rem;">Docker</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="skill10" name="selectedSkills[]" value="Git">
+                  <label for="skill10" style="margin-left: 0.5rem;">Git</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Relevant Experience</h2>
+            <p style="margin-bottom: 1rem; color: #666;">Select which experiences you want to emphasize for this job</p>
+            
+            <div class="form-group" id="experienceCheckboxes">
+              <div style="margin-bottom: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="exp1" name="selectedExperiences[]" value="Software Engineer at Google" checked>
+                  <label for="exp1" style="margin-left: 0.5rem;">Software Engineer at Google (2020-2022)</label>
+                </div>
+                <div style="margin-left: 1.5rem; color: #666; font-size: 0.875rem;">
+                  Developed and maintained web applications using React and Node.js
+                </div>
+              </div>
+              
+              <div style="margin-bottom: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="exp2" name="selectedExperiences[]" value="Frontend Developer at Facebook" checked>
+                  <label for="exp2" style="margin-left: 0.5rem;">Frontend Developer at Facebook (2018-2020)</label>
+                </div>
+                <div style="margin-left: 1.5rem; color: #666; font-size: 0.875rem;">
+                  Built and optimized user interfaces using React and Redux
+                </div>
+              </div>
+              
+              <div style="margin-bottom: 1rem;">
+                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                  <input type="checkbox" id="exp3" name="selectedExperiences[]" value="Web Developer Intern at Microsoft">
+                  <label for="exp3" style="margin-left: 0.5rem;">Web Developer Intern at Microsoft (Summer 2017)</label>
+                </div>
+                <div style="margin-left: 1.5rem; color: #666; font-size: 0.875rem;">
+                  Assisted in developing web components using Angular
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Resume Options</h2>
+            <div class="form-group">
+              <label for="resumeTemplate" class="form-label">Resume Template</label>
+              <select id="resumeTemplate" name="resumeTemplate" class="form-input">
+                <option value="professional">Professional</option>
+                <option value="modern">Modern</option>
+                <option value="creative">Creative</option>
+                <option value="simple">Simple</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="resumeFormat" class="form-label">Resume Format</label>
+              <select id="resumeFormat" name="resumeFormat" class="form-input">
+                <option value="pdf">PDF</option>
+                <option value="docx">DOCX</option>
+                <option value="both">Both PDF & DOCX</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="optimizationLevel" class="form-label">ATS Optimization Level</label>
+              <select id="optimizationLevel" name="optimizationLevel" class="form-input">
+                <option value="high">High (Maximum keyword matching)</option>
+                <option value="balanced" selected>Balanced (Keywords + Readability)</option>
+                <option value="low">Low (Focus on human readability)</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Save to Application History</h2>
+            <div class="form-group">
+              <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="saveToHistory" name="saveToHistory" checked>
+                <label for="saveToHistory" style="margin-left: 0.5rem;">Save this job to my application history</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="applicationStatus" class="form-label">Application Status</label>
+              <select id="applicationStatus" name="applicationStatus" class="form-input">
+                <option value="planning">Planning to Apply</option>
+                <option value="applied">Applied</option>
+                <option value="interviewing">Interviewing</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="applicationNotes" class="form-label">Notes (optional)</label>
+              <textarea id="applicationNotes" name="applicationNotes" class="form-textarea" placeholder="Add any notes about this application"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <a href="dashboard.html" class="form-button secondary">Cancel</a>
+            <button type="submit" class="form-button">Generate Tailored Resume</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 AIHawk Jobs Applier - All rights reserved</p>
+    </footer>
+    
+    <div class="notification" id="notification" style="display: none;">
+      <div class="notification-icon success">✓</div>
+      <div class="notification-content">
+        <div class="notification-title">Success!</div>
+        <div class="notification-message">Your tailored resume is being generated. You'll be notified when it's ready.</div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('tailoredResumeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show notification
+      const notification = document.getElementById('notification');
+      notification.style.display = 'flex';
+      
+      // Hide notification after 5 seconds
+      setTimeout(function() {
+        notification.style.display = 'none';
+        // Redirect to dashboard
+        window.location.href = 'dashboard.html';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

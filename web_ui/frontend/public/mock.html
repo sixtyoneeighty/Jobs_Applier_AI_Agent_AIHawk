@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIHawk Jobs Applier</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background-color: #f5f5f5;
+    }
+    .app-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #1976d2;
+      color: white;
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: white;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-button {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+    .nav-button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-grow: 1;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .card-title {
+      color: #1976d2;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+    .card-content {
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    .card-button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    .card-button:hover {
+      background-color: #1565c0;
+    }
+    .documents-section {
+      margin-top: 3rem;
+    }
+    .section-title {
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    .document-list {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .document-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #eee;
+    }
+    .document-item:last-child {
+      border-bottom: none;
+    }
+    .document-icon {
+      color: #1976d2;
+      margin-right: 1rem;
+    }
+    .document-name {
+      flex-grow: 1;
+    }
+    .document-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .icon-button {
+      background-color: transparent;
+      border: none;
+      color: #1976d2;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+    .icon-button:hover {
+      background-color: rgba(25, 118, 210, 0.1);
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+    }
+    .empty-state-icon {
+      font-size: 3rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    /* Material Design Icons (simplified) */
+    .material-icon {
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <a href="#" class="logo">AIHawk Jobs Applier</a>
+      <nav>
+        <button class="nav-button">Dashboard</button>
+        <button class="nav-button">Create Resume</button>
+        <button class="nav-button">Tailored Resume</button>
+        <button class="nav-button">Cover Letter</button>
+      </nav>
+    </header>
+    
+    <main>
+      <div class="dashboard">
+        <div class="card">
+          <h2 class="card-title">Generate Resume</h2>
+          <p class="card-content">Create a professional resume using your personal information and work experience.</p>
+          <button class="card-button">Create Resume</button>
+        </div>
+        
+        <div class="card">
+          <h2 class="card-title">Generate Tailored Resume</h2>
+          <p class="card-content">Create a resume tailored specifically to a job description to increase your chances of success.</p>
+          <button class="card-button">Create Tailored Resume</button>
+        </div>
+        
+        <div class="card">
+          <h2 class="card-title">Generate Cover Letter</h2>
+          <p class="card-content">Create a personalized cover letter for a specific job opportunity.</p>
+          <button class="card-button">Create Cover Letter</button>
+        </div>
+      </div>
+      
+      <div class="documents-section">
+        <h2 class="section-title">Your Documents</h2>
+        <div class="document-list">
+          <div class="document-item">
+            <span class="material-icon document-icon">&#128196;</span>
+            <span class="document-name">Resume - Software Engineer (2025-03-12)</span>
+            <div class="document-actions">
+              <button class="icon-button">&#128065;</button>
+              <button class="icon-button">&#8595;</button>
+            </div>
+          </div>
+          
+          <div class="document-item">
+            <span class="material-icon document-icon">&#128196;</span>
+            <span class="document-name">Tailored Resume - Full Stack Developer (2025-03-10)</span>
+            <div class="document-actions">
+              <button class="icon-button">&#128065;</button>
+              <button class="icon-button">&#8595;</button>
+            </div>
+          </div>
+          
+          <div class="document-item">
+            <span class="material-icon document-icon">&#9993;</span>
+            <span class="document-name">Cover Letter - Amazon Software Engineer (2025-03-05)</span>
+            <div class="document-actions">
+              <button class="icon-button">&#128065;</button>
+              <button class="icon-button">&#8595;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 AIHawk Jobs Applier - All rights reserved</p>
+    </footer>
+  </div>
+</body>
+</html>

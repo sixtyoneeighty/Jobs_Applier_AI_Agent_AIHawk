@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | AIHawk Jobs Applier</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <a href="dashboard.html" class="logo">AIHawk Jobs Applier</a>
+      <nav>
+        <a href="dashboard.html" class="nav-button active">Dashboard</a>
+        <a href="resume.html" class="nav-button">Create Resume</a>
+        <a href="tailored-resume.html" class="nav-button">Tailored Resume</a>
+        <a href="cover-letter.html" class="nav-button">Cover Letter</a>
+        <a href="application-history.html" class="nav-button">Applications</a>
+        <a href="profile.html" class="nav-button">Profile</a>
+      </nav>
+    </header>
+    
+    <main>
+      <h1 class="page-title">Dashboard</h1>
+      
+      <div class="setup-progress">
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 80%;"></div>
+        </div>
+        <div class="setup-steps">
+          <div class="setup-step completed">
+            <div class="step-icon">✓</div>
+            <div class="step-label">Resume Info</div>
+          </div>
+          <div class="setup-step completed">
+            <div class="step-icon">✓</div>
+            <div class="step-label">Work Preferences</div>
+          </div>
+          <div class="setup-step completed">
+            <div class="step-icon">✓</div>
+            <div class="step-label">API Key</div>
+          </div>
+          <div class="setup-step">
+            <div class="step-icon">4</div>
+            <div class="step-label">Test Generation</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dashboard">
+        <div class="card">
+          <h2 class="card-title">Generate Resume</h2>
+          <p class="card-content">Create a professional resume using your personal information and work experience.</p>
+          <a href="resume.html" class="card-button">Create Resume</a>
+        </div>
+        
+        <div class="card">
+          <h2 class="card-title">Generate Tailored Resume</h2>
+          <p class="card-content">Create a resume tailored specifically to a job description to increase your chances of success.</p>
+          <a href="tailored-resume.html" class="card-button">Create Tailored Resume</a>
+        </div>
+        
+        <div class="card">
+          <h2 class="card-title">Generate Cover Letter</h2>
+          <p class="card-content">Create a personalized cover letter for a specific job opportunity.</p>
+          <a href="cover-letter.html" class="card-button">Create Cover Letter</a>
+        </div>
+      </div>
+      
+      <div class="documents-section">
+        <h2 class="section-title">Your Documents</h2>
+        <div class="document-list">
+          <div class="document-item">
+            <span class="material-icon document-icon">📄</span>
+            <div class="document-info">
+              <span class="document-name">Resume - Software Engineer</span>
+              <span class="document-date">Generated on March 12, 2025</span>
+            </div>
+            <div class="document-actions">
+              <a href="#" class="icon-button" title="View">👁️</a>
+              <a href="#" class="icon-button" title="Download">⬇️</a>
+            </div>
+          </div>
+          
+          <div class="document-item">
+            <span class="material-icon document-icon">📄</span>
+            <div class="document-info">
+              <span class="document-name">Tailored Resume - Full Stack Developer</span>
+              <span class="document-date">Generated on March 10, 2025</span>
+            </div>
+            <div class="document-actions">
+              <a href="#" class="icon-button" title="View">👁️</a>
+              <a href="#" class="icon-button" title="Download">⬇️</a>
+            </div>
+          </div>
+          
+          <div class="document-item">
+            <span class="material-icon document-icon">✉️</span>
+            <div class="document-info">
+              <span class="document-name">Cover Letter - Amazon Software Engineer</span>
+              <span class="document-date">Generated on March 5, 2025</span>
+            </div>
+            <div class="document-actions">
+              <a href="#" class="icon-button" title="View">👁️</a>
+              <a href="#" class="icon-button" title="Download">⬇️</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 AIHawk Jobs Applier - All rights reserved</p>
+    </footer>
+  </div>
+</body>
+</html>

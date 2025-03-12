@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | AIHawk Jobs Applier</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <a href="dashboard.html" class="logo">AIHawk Jobs Applier</a>
+      <nav>
+        <a href="dashboard.html" class="nav-button">Dashboard</a>
+        <a href="resume.html" class="nav-button">Create Resume</a>
+        <a href="tailored-resume.html" class="nav-button">Tailored Resume</a>
+        <a href="cover-letter.html" class="nav-button">Cover Letter</a>
+        <a href="application-history.html" class="nav-button">Applications</a>
+        <a href="profile.html" class="nav-button active">Profile</a>
+      </nav>
+    </header>
+    
+    <main>
+      <h1 class="page-title">Your Profile</h1>
+      
+      <div class="profile-header">
+        <div class="profile-avatar">J</div>
+        <div class="profile-info">
+          <h2 class="profile-name">John Doe</h2>
+          <div class="profile-email">john.doe@example.com</div>
+          <button class="form-button secondary">Edit Photo</button>
+        </div>
+      </div>
+      
+      <div class="profile-tabs">
+        <a href="#personal-info" class="profile-tab active">Personal Info</a>
+        <a href="#work-preferences" class="profile-tab">Work Preferences</a>
+        <a href="#api-settings" class="profile-tab">API Settings</a>
+        <a href="#account-settings" class="profile-tab">Account Settings</a>
+      </div>
+      
+      <div class="form-container" id="personal-info">
+        <form id="personalInfoForm">
+          <div class="form-section">
+            <h2 class="form-section-title">Personal Information</h2>
+            <div class="form-group">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" id="fullName" name="fullName" class="form-input" value="John Doe" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" value="john.doe@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" id="phone" name="phone" class="form-input" value="(123) 456-7890" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="location" class="form-label">Location</label>
+              <input type="text" id="location" name="location" class="form-input" value="San Francisco, CA" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="linkedIn" class="form-label">LinkedIn (optional)</label>
+              <input type="url" id="linkedIn" name="linkedIn" class="form-input" value="https://linkedin.com/in/johndoe">
+            </div>
+            
+            <div class="form-group">
+              <label for="portfolio" class="form-label">Portfolio/Website (optional)</label>
+              <input type="url" id="portfolio" name="portfolio" class="form-input" value="https://johndoe.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="github" class="form-label">GitHub (optional)</label>
+              <input type="url" id="github" name="github" class="form-input" value="https://github.com/johndoe">
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Professional Summary</h2>
+            <div class="form-group">
+              <label for="summary" class="form-label">Professional Summary</label>
+              <textarea id="summary" name="summary" class="form-textarea" required>Experienced software engineer with over 5 years of experience in full-stack development. Proficient in JavaScript, TypeScript, React, Node.js, and AWS. Passionate about building scalable web applications and solving complex problems.</textarea>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="form-button">Save Changes</button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="form-container" id="work-preferences" style="display: none;">
+        <form id="workPreferencesForm">
+          <div class="form-section">
+            <h2 class="form-section-title">Job Preferences</h2>
+            
+            <div class="form-group">
+              <label for="jobTitles" class="form-label">Preferred Job Titles</label>
+              <textarea id="jobTitles" name="jobTitles" class="form-textarea" placeholder="Software Engineer, Full Stack Developer, Frontend Developer" required>Software Engineer, Full Stack Developer, Frontend Developer</textarea>
+              <div style="color: #666; font-size: 0.875rem; margin-top: 0.5rem;">Separate titles with commas</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="industries" class="form-label">Preferred Industries</label>
+              <textarea id="industries" name="industries" class="form-textarea" placeholder="Tech, Finance, Healthcare">Tech, E-commerce, FinTech</textarea>
+              <div style="color: #666; font-size: 0.875rem; margin-top: 0.5rem;">Separate industries with commas</div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Work Type Preferences</label>
+              <div style="display: flex; gap: 2rem; margin-top: 0.5rem;">
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" id="fullTime" name="workTypes[]" value="fullTime" checked>
+                  <label for="fullTime" style="margin-left: 0.5rem;">Full-time</label>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" id="partTime" name="workTypes[]" value="partTime">
+                  <label for="partTime" style="margin-left: 0.5rem;">Part-time</label>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" id="contract" name="workTypes[]" value="contract" checked>
+                  <label for="contract" style="margin-left: 0.5rem;">Contract</label>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" id="freelance" name="workTypes[]" value="freelance">
+                  <label for="freelance" style="margin-left: 0.5rem;">Freelance</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Remote Work Preferences</label>
+              <div style="display: flex; gap: 2rem; margin-top: 0.5rem;">
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" id="onsite" name="remotePreferences[]" value="onsite">
+                  <label for="onsite" style="margin-left: 0.5rem;">On-site</label>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" id="hybrid" name="remotePreferences[]" value="hybrid" checked>
+                  <label for="hybrid" style="margin-left: 0.5rem;">Hybrid</label>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" id="remote" name="remotePreferences[]" value="remote" checked>
+                  <label for="remote" style="margin-left: 0.5rem;">Remote</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="minSalary" class="form-label">Minimum Salary Expectation (Annual)</label>
+              <input type="number" id="minSalary" name="minSalary" class="form-input" value="100000" required>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Location Preferences</h2>
+            
+            <div class="form-group">
+              <label for="preferredLocations" class="form-label">Preferred Locations</label>
+              <textarea id="preferredLocations" name="preferredLocations" class="form-textarea" placeholder="San Francisco, CA; New York, NY; Seattle, WA">San Francisco, CA; New York, NY; Remote</textarea>
+              <div style="color: #666; font-size: 0.875rem; margin-top: 0.5rem;">Separate locations with semicolons</div>
+            </div>
+            
+            <div class="form-group">
+              <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="openToRelocation" name="openToRelocation" checked>
+                <label for="openToRelocation" style="margin-left: 0.5rem;">Open to Relocation</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Blacklists</h2>
+            
+            <div class="form-group">
+              <label for="companyBlacklist" class="form-label">Company Blacklist</label>
+              <textarea id="companyBlacklist" name="companyBlacklist" class="form-textarea" placeholder="List companies you don't want to apply to"></textarea>
+              <div style="color: #666; font-size: 0.875rem; margin-top: 0.5rem;">Separate companies with commas</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="keywordBlacklist" class="form-label">Keyword Blacklist</label>
+              <textarea id="keywordBlacklist" name="keywordBlacklist" class="form-textarea" placeholder="List keywords to avoid in job descriptions">unpaid, commission-only</textarea>
+              <div style="color: #666; font-size: 0.875rem; margin-top: 0.5rem;">Separate keywords with commas</div>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="form-button">Save Changes</button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="form-container" id="api-settings" style="display: none;">
+        <form id="apiSettingsForm">
+          <div class="form-section">
+            <h2 class="form-section-title">API Settings</h2>
+            
+            <div class="form-group">
+              <label for="apiKey" class="form-label">LLM API Key</label>
+              <input type="password" id="apiKey" name="apiKey" class="form-input" value="sk-••••••••••••••••••••••••••••••••••••••••••••" required>
+              <div style="color: #666; font-size: 0.875rem; margin-top: 0.5rem;">Your API key is encrypted and stored securely</div>
+            </div>
+            
+            <div class="form-group">
+              <label for="modelSelection" class="form-label">AI Model Selection</label>
+              <select id="modelSelection" name="modelSelection" class="form-input">
+                <option value="gpt4">GPT-4</option>
+                <option value="gpt35" selected>GPT-3.5 Turbo</option>
+                <option value="claude">Claude 3 Opus</option>
+                <option value="palm">PaLM</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="saveResponses" name="saveResponses" checked>
+                <label for="saveResponses" style="margin-left: 0.5rem;">Save AI Responses for Improvement</label>
+              </div>
+              <div style="color: #666; font-size: 0.875rem; margin-top: 0.5rem;">This helps us improve the quality of generated resumes and cover letters</div>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="form-button">Save Changes</button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="form-container" id="account-settings" style="display: none;">
+        <form id="accountSettingsForm">
+          <div class="form-section">
+            <h2 class="form-section-title">Account Settings</h2>
+            
+            <div class="form-group">
+              <label for="currentPassword" class="form-label">Current Password</label>
+              <input type="password" id="currentPassword" name="currentPassword" class="form-input" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="newPassword" class="form-label">New Password</label>
+              <input type="password" id="newPassword" name="newPassword" class="form-input">
+            </div>
+            
+            <div class="form-group">
+              <label for="confirmPassword" class="form-label">Confirm New Password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" class="form-input">
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Notification Settings</h2>
+            
+            <div class="form-group">
+              <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                <input type="checkbox" id="emailNotifications" name="emailNotifications" checked>
+                <label for="emailNotifications" style="margin-left: 0.5rem;">Email Notifications</label>
+              </div>
+              
+              <div style="margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" id="documentNotifications" name="documentNotifications" checked>
+                  <label for="documentNotifications" style="margin-left: 0.5rem;">Document Generation Notifications</label>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" id="applicationReminders" name="applicationReminders" checked>
+                  <label for="applicationReminders" style="margin-left: 0.5rem;">Application Follow-up Reminders</label>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <input type="checkbox" id="marketingEmails" name="marketingEmails">
+                  <label for="marketingEmails" style="margin-left: 0.5rem;">Marketing and Updates</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Data Management</h2>
+            
+            <div style="margin-bottom: 1rem;">
+              <button type="button" class="form-button secondary">Export All Data</button>
+              <div style="color: #666; font-size: 0.875rem; margin-top: 0.5rem;">Download all your documents and application history</div>
+            </div>
+            
+            <div>
+              <button type="button" class="form-button secondary" style="color: #f44336; border-color: #f44336;">Delete Account</button>
+              <div style="color: #666; font-size: 0.875rem; margin-top: 0.5rem;">This will permanently delete your account and all associated data</div>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="form-button">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 AIHawk Jobs Applier - All rights reserved</p>
+    </footer>
+    
+    <div class="notification" id="notification" style="display: none;">
+      <div class="notification-icon success">✓</div>
+      <div class="notification-content">
+        <div class="notification-title">Success!</div>
+        <div class="notification-message">Your profile has been updated successfully.</div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Tab switching functionality
+    const tabs = document.querySelectorAll('.profile-tab');
+    const tabContents = document.querySelectorAll('.form-container');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all tab contents
+        tabContents.forEach(content => content.style.display = 'none');
+        
+        // Show selected tab content
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).style.display = 'block';
+      });
+    });
+    
+    // Form submission handlers
+    const forms = document.querySelectorAll('form');
+    
+    forms.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show notification
+        const notification = document.getElementById('notification');
+        notification.style.display = 'flex';
+        
+        // Hide notification after 3 seconds
+        setTimeout(function() {
+          notification.style.display = 'none';
+        }, 3000);
+      });
+    });
+  </script>
+</body>
+</html>

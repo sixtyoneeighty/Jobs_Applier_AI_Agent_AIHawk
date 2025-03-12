@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Resume | AIHawk Jobs Applier</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <a href="dashboard.html" class="logo">AIHawk Jobs Applier</a>
+      <nav>
+        <a href="dashboard.html" class="nav-button">Dashboard</a>
+        <a href="resume.html" class="nav-button active">Create Resume</a>
+        <a href="tailored-resume.html" class="nav-button">Tailored Resume</a>
+        <a href="cover-letter.html" class="nav-button">Cover Letter</a>
+        <a href="application-history.html" class="nav-button">Applications</a>
+        <a href="profile.html" class="nav-button">Profile</a>
+      </nav>
+    </header>
+    
+    <main>
+      <h1 class="page-title">Generate Resume</h1>
+      
+      <div class="form-container">
+        <form id="resumeForm">
+          <div class="form-section">
+            <h2 class="form-section-title">Personal Information</h2>
+            <div class="form-group">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" id="fullName" name="fullName" class="form-input" placeholder="John Doe" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="john.doe@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="(123) 456-7890" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="location" class="form-label">Location</label>
+              <input type="text" id="location" name="location" class="form-input" placeholder="City, State" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="linkedIn" class="form-label">LinkedIn (optional)</label>
+              <input type="url" id="linkedIn" name="linkedIn" class="form-input" placeholder="https://linkedin.com/in/johndoe">
+            </div>
+            
+            <div class="form-group">
+              <label for="portfolio" class="form-label">Portfolio/Website (optional)</label>
+              <input type="url" id="portfolio" name="portfolio" class="form-input" placeholder="https://johndoe.com">
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Professional Summary</h2>
+            <div class="form-group">
+              <label for="summary" class="form-label">Professional Summary</label>
+              <textarea id="summary" name="summary" class="form-textarea" placeholder="Write a brief summary about your professional background and goals" required></textarea>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Work Experience</h2>
+            <div id="workExperienceContainer">
+              <div class="form-group work-experience-item">
+                <div class="form-group">
+                  <label class="form-label">Company Name</label>
+                  <input type="text" name="companies[]" class="form-input" placeholder="Company ABC" required>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Position</label>
+                  <input type="text" name="positions[]" class="form-input" placeholder="Software Engineer" required>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Start Date</label>
+                  <input type="month" name="startDates[]" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">End Date</label>
+                  <input type="month" name="endDates[]" class="form-input">
+                  <div style="margin-top: 0.5rem;">
+                    <input type="checkbox" id="currentPosition1" name="currentPositions[]">
+                    <label for="currentPosition1">I currently work here</label>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Responsibilities & Achievements</label>
+                  <textarea name="responsibilities[]" class="form-textarea" placeholder="Describe your key responsibilities and achievements" required></textarea>
+                </div>
+              </div>
+            </div>
+            
+            <button type="button" id="addWorkExperience" class="form-button secondary" style="margin-top: 1rem;">Add Another Work Experience</button>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Education</h2>
+            <div id="educationContainer">
+              <div class="form-group education-item">
+                <div class="form-group">
+                  <label class="form-label">Institution</label>
+                  <input type="text" name="institutions[]" class="form-input" placeholder="University of Example" required>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Degree</label>
+                  <input type="text" name="degrees[]" class="form-input" placeholder="Bachelor of Science in Computer Science" required>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Graduation Date</label>
+                  <input type="month" name="graduationDates[]" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">GPA (optional)</label>
+                  <input type="text" name="gpas[]" class="form-input" placeholder="3.8/4.0">
+                </div>
+              </div>
+            </div>
+            
+            <button type="button" id="addEducation" class="form-button secondary" style="margin-top: 1rem;">Add Another Education</button>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Skills</h2>
+            <div class="form-group">
+              <label for="skills" class="form-label">Technical Skills</label>
+              <textarea id="skills" name="skills" class="form-textarea" placeholder="List your technical skills (separated by commas)" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="softSkills" class="form-label">Soft Skills (optional)</label>
+              <textarea id="softSkills" name="softSkills" class="form-textarea" placeholder="List your soft skills (separated by commas)"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Projects (optional)</h2>
+            <div id="projectsContainer">
+              <div class="form-group project-item">
+                <div class="form-group">
+                  <label class="form-label">Project Name</label>
+                  <input type="text" name="projectNames[]" class="form-input" placeholder="E-commerce Website">
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Description</label>
+                  <textarea name="projectDescriptions[]" class="form-textarea" placeholder="Brief description of the project"></textarea>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Technologies Used</label>
+                  <input type="text" name="technologies[]" class="form-input" placeholder="React, Node.js, MongoDB">
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Project URL (optional)</label>
+                  <input type="url" name="projectUrls[]" class="form-input" placeholder="https://github.com/johndoe/project">
+                </div>
+              </div>
+            </div>
+            
+            <button type="button" id="addProject" class="form-button secondary" style="margin-top: 1rem;">Add Another Project</button>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Resume Options</h2>
+            <div class="form-group">
+              <label for="resumeTemplate" class="form-label">Resume Template</label>
+              <select id="resumeTemplate" name="resumeTemplate" class="form-input">
+                <option value="professional">Professional</option>
+                <option value="modern">Modern</option>
+                <option value="creative">Creative</option>
+                <option value="simple">Simple</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="resumeFormat" class="form-label">Resume Format</label>
+              <select id="resumeFormat" name="resumeFormat" class="form-input">
+                <option value="pdf">PDF</option>
+                <option value="docx">DOCX</option>
+                <option value="both">Both PDF & DOCX</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <a href="dashboard.html" class="form-button secondary">Cancel</a>
+            <button type="submit" class="form-button">Generate Resume</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 AIHawk Jobs Applier - All rights reserved</p>
+    </footer>
+    
+    <div class="notification" id="notification" style="display: none;">
+      <div class="notification-icon success">✓</div>
+      <div class="notification-content">
+        <div class="notification-title">Success!</div>
+        <div class="notification-message">Your resume is being generated. You'll be notified when it's ready.</div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('resumeForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show notification
+      const notification = document.getElementById('notification');
+      notification.style.display = 'flex';
+      
+      // Hide notification after 5 seconds
+      setTimeout(function() {
+        notification.style.display = 'none';
+        // Redirect to dashboard
+        window.location.href = 'dashboard.html';
+      }, 5000);
+    });
+    
+    // Add work experience
+    document.getElementById('addWorkExperience').addEventListener('click', function() {
+      const container = document.getElementById('workExperienceContainer');
+      const items = container.querySelectorAll('.work-experience-item');
+      const newItem = items[0].cloneNode(true);
+      
+      // Clear input values
+      newItem.querySelectorAll('input, textarea').forEach(input => {
+        input.value = '';
+      });
+      
+      // Update checkbox ID
+      const checkbox = newItem.querySelector('input[type="checkbox"]');
+      const newId = 'currentPosition' + (items.length + 1);
+      checkbox.id = newId;
+      newItem.querySelector('label[for^="currentPosition"]').setAttribute('for', newId);
+      
+      container.appendChild(newItem);
+    });
+    
+    // Add education
+    document.getElementById('addEducation').addEventListener('click', function() {
+      const container = document.getElementById('educationContainer');
+      const items = container.querySelectorAll('.education-item');
+      const newItem = items[0].cloneNode(true);
+      
+      // Clear input values
+      newItem.querySelectorAll('input').forEach(input => {
+        input.value = '';
+      });
+      
+      container.appendChild(newItem);
+    });
+    
+    // Add project
+    document.getElementById('addProject').addEventListener('click', function() {
+      const container = document.getElementById('projectsContainer');
+      const items = container.querySelectorAll('.project-item');
+      const newItem = items[0].cloneNode(true);
+      
+      // Clear input values
+      newItem.querySelectorAll('input, textarea').forEach(input => {
+        input.value = '';
+      });
+      
+      container.appendChild(newItem);
+    });
+  </script>
+</body>
+</html>

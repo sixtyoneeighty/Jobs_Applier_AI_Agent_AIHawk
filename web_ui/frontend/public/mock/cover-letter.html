@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Cover Letter | AIHawk Jobs Applier</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <a href="dashboard.html" class="logo">AIHawk Jobs Applier</a>
+      <nav>
+        <a href="dashboard.html" class="nav-button">Dashboard</a>
+        <a href="resume.html" class="nav-button">Create Resume</a>
+        <a href="tailored-resume.html" class="nav-button">Tailored Resume</a>
+        <a href="cover-letter.html" class="nav-button active">Cover Letter</a>
+        <a href="application-history.html" class="nav-button">Applications</a>
+        <a href="profile.html" class="nav-button">Profile</a>
+      </nav>
+    </header>
+    
+    <main>
+      <h1 class="page-title">Generate Cover Letter</h1>
+      
+      <div class="form-container">
+        <form id="coverLetterForm">
+          <div class="form-section">
+            <h2 class="form-section-title">Job Details</h2>
+            <div class="form-group">
+              <label for="jobTitle" class="form-label">Job Title</label>
+              <input type="text" id="jobTitle" name="jobTitle" class="form-input" placeholder="Software Engineer" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="company" class="form-label">Company</label>
+              <input type="text" id="company" name="company" class="form-input" placeholder="Google" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="hiringManager" class="form-label">Hiring Manager Name (if known)</label>
+              <input type="text" id="hiringManager" name="hiringManager" class="form-input" placeholder="Jane Smith">
+            </div>
+            
+            <div class="form-group">
+              <label for="jobDescription" class="form-label">Job Description</label>
+              <textarea id="jobDescription" name="jobDescription" class="form-textarea" rows="10" placeholder="Paste the job description here" required></textarea>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Cover Letter Content</h2>
+            
+            <div class="form-group">
+              <label for="specificInterest" class="form-label">Why are you interested in this position?</label>
+              <textarea id="specificInterest" name="specificInterest" class="form-textarea" placeholder="Explain why you're specifically interested in this role and company" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="relevantExperience" class="form-label">Most Relevant Experience</label>
+              <textarea id="relevantExperience" name="relevantExperience" class="form-textarea" placeholder="Describe your most relevant experience for this position" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="keyAchievements" class="form-label">Key Achievements</label>
+              <textarea id="keyAchievements" name="keyAchievements" class="form-textarea" placeholder="List 2-3 key achievements that demonstrate your qualifications" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="companyResearch" class="form-label">Company Research (optional)</label>
+              <textarea id="companyResearch" name="companyResearch" class="form-textarea" placeholder="Share any specific research about the company that shows your interest"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Cover Letter Style</h2>
+            
+            <div class="form-group">
+              <label for="toneStyle" class="form-label">Tone & Style</label>
+              <select id="toneStyle" name="toneStyle" class="form-input">
+                <option value="professional">Professional & Formal</option>
+                <option value="conversational">Conversational & Approachable</option>
+                <option value="enthusiastic">Enthusiastic & Passionate</option>
+                <option value="confident">Confident & Assertive</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="letterLength" class="form-label">Length</label>
+              <select id="letterLength" name="letterLength" class="form-input">
+                <option value="short">Short (250-300 words)</option>
+                <option value="medium" selected>Medium (350-450 words)</option>
+                <option value="long">Long (500+ words)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="letterFormat" class="form-label">Format</label>
+              <select id="letterFormat" name="letterFormat" class="form-input">
+                <option value="standard">Standard Business Letter</option>
+                <option value="modern">Modern Format</option>
+                <option value="creative">Creative Format</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Output Options</h2>
+            
+            <div class="form-group">
+              <label for="fileFormat" class="form-label">File Format</label>
+              <select id="fileFormat" name="fileFormat" class="form-input">
+                <option value="pdf">PDF</option>
+                <option value="docx">DOCX</option>
+                <option value="both">Both PDF & DOCX</option>
+                <option value="text">Plain Text</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="includeLetterhead" name="includeLetterhead" checked>
+                <label for="includeLetterhead" style="margin-left: 0.5rem;">Include Letterhead with Contact Information</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="includeSignature" name="includeSignature" checked>
+                <label for="includeSignature" style="margin-left: 0.5rem;">Include Digital Signature</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h2 class="form-section-title">Save to Application History</h2>
+            <div class="form-group">
+              <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="saveToHistory" name="saveToHistory" checked>
+                <label for="saveToHistory" style="margin-left: 0.5rem;">Save this job to my application history</label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="applicationStatus" class="form-label">Application Status</label>
+              <select id="applicationStatus" name="applicationStatus" class="form-input">
+                <option value="planning">Planning to Apply</option>
+                <option value="applied">Applied</option>
+                <option value="interviewing">Interviewing</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="applicationNotes" class="form-label">Notes (optional)</label>
+              <textarea id="applicationNotes" name="applicationNotes" class="form-textarea" placeholder="Add any notes about this application"></textarea>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <a href="dashboard.html" class="form-button secondary">Cancel</a>
+            <button type="submit" class="form-button">Generate Cover Letter</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 AIHawk Jobs Applier - All rights reserved</p>
+    </footer>
+    
+    <div class="notification" id="notification" style="display: none;">
+      <div class="notification-icon success">✓</div>
+      <div class="notification-content">
+        <div class="notification-title">Success!</div>
+        <div class="notification-message">Your cover letter is being generated. You'll be notified when it's ready.</div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('coverLetterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show notification
+      const notification = document.getElementById('notification');
+      notification.style.display = 'flex';
+      
+      // Hide notification after 5 seconds
+      setTimeout(function() {
+        notification.style.display = 'none';
+        // Redirect to dashboard
+        window.location.href = 'dashboard.html';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
