@@ -1,0 +1,17 @@
+[build]
+  # Directory to change to before starting a build
+  base = "web_ui/frontend"
+  # Directory that contains the deploy-ready HTML files
+  publish = "build"
+  # Build command
+  command = "npm run build"
+
+# Redirect and rewrite rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables
+[build.environment]
+  REACT_APP_API_URL = "https://your-backend-api.com"
